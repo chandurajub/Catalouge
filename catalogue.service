@@ -1,0 +1,13 @@
+[Unit]
+Description=Node.js Catalogue Service
+
+[Service]
+User=catalogue
+ExecStart=/bin/node /home/catalogue/catalogue/server.js
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/robo-shop/catalogue.log
+StandardError=append:/var/log/robo-shop/catalogue.log
+SyslogIdentifier=catalogue
+[Install]
+WantedBy=multi-user.target
